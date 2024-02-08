@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from string import ascii_lowercase, ascii_uppercase, digits
 from random import choices
 
@@ -8,11 +9,12 @@ from .forms import URlMapForm
 from .models import URLMap
 
 URL = 'http://localhost/'
+LETTERS = ascii_lowercase + ascii_uppercase + digits
 
 
 def get_unique_short_id():
     return ''.join(choices(
-        ascii_lowercase + ascii_uppercase + digits, k=6
+        LETTERS, k=6
     ))
 
 
@@ -41,5 +43,5 @@ def index_view():
 def redirect_view(short):
     link = URLMap.query.filter_by(short=short).first()
     if link is None:
-        abort(404)
+        abort(HTTPStatus.NOT_FOUND)
     return redirect(link.original)

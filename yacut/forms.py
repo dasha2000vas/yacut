@@ -1,8 +1,6 @@
-from string import ascii_lowercase, ascii_uppercase, digits
-
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, ValidationError, URLField
-from wtforms.validators import DataRequired, Length, Optional
+from wtforms import StringField, SubmitField, URLField
+from wtforms.validators import DataRequired, Length, Optional, Regexp
 
 
 class URlMapForm(FlaskForm):
@@ -13,11 +11,6 @@ class URlMapForm(FlaskForm):
     )
     custom_id = StringField(
         'Ваш вариант короткой ссылки',
-        validators=[Length(1, 16), Optional()]
+        validators=[Length(1, 16), Optional(), Regexp('[0-9A-Za-z]+')]
     )
     submit = SubmitField('Создать')
-
-    def validate_custom_id(form, field):
-        for letter in field.data:
-            if letter not in ascii_lowercase + ascii_uppercase + digits:
-                raise ValidationError('Указано недопустимое имя для короткой ссылки')
