@@ -2,10 +2,10 @@
 
 ## Описание:
 
-<h4>YAcut - это сайт, а также api для укорачивания ссылок.
+<h4>YAcut - это сайт, а также api, предоставляющий возможность укорачивания ссылок.
 
 Он позволит использовать более читаемые и компактные ссылки, такие как
-http://localhost/cats и http://localhost/GU3w7l вместо длинных и запутанных вроде [https://www.yandex.ru/images/search?from=tabbar&text=%D0%BA%D0%BE%D1%88%D0%BA%D0%B8](https://www.yandex.ru/images/search?from=tabbar&text=%D0%BA%D0%BE%D1%88%D0%BA%D0%B8)
+http://localhost/cats и http://localhost/GU3w7l вместо привычных длинных [https://www.yandex.ru/images/search?from=tabbar&text=%D0%BA%D0%BE%D1%88%D0%BA%D0%B8](https://www.yandex.ru/images/search?from=tabbar&text=%D0%BA%D0%BE%D1%88%D0%BA%D0%B8)
 </h4>
 
 Доступны следующие функции: создание связи между укороченным вариантом и оригинальной ссылкой, получение полной ссылки по короткому id.
@@ -41,7 +41,7 @@ flask shell
 >>> db.create_all() 
 ```
 
-5.**Запустить проект на локальном сервере:**
+5. **Запустить проект на локальном сервере:**
 
 ```bash
 flask run
