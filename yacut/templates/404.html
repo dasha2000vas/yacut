@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <main>
+    <section class="container my-5 px-4">
+      <h1 class="text-center"><span style="color:red">Страница</span> не найдена</h1>
+
+      <div class="container">
+        <div class="row ">
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+            <p class="text-center">
+              <h5 class="text-center">
+                Упс! Такой страницы нет на нашем сайте. Попробуйте
+                <a href="{{ url_for('index_view') }}">вернуться на главную</a>
+              </h5>
+            </p>
+          </div>
+          <div class="col-sm">
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+{% endblock content %}
